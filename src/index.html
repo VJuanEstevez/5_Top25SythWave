@@ -1,0 +1,180 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#0a0614" />
+    <meta
+      name="description"
+      content="Las 25 mejores canciones electrónicas de los 80, con sus videoclips: Blue Monday, Planet Rock, Sweet Dreams, West End Girls y más himnos de sintetizador."
+    />
+    <title>Top 25 · Electrónica de los 80</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Space+Grotesk:wght@400;500;700&family=Space+Mono:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./css/tokens.css" />
+    <link rel="stylesheet" href="./css/base.css" />
+    <link rel="stylesheet" href="./css/components.css" />
+    <link rel="stylesheet" href="./css/sections.css" />
+    <link rel="stylesheet" href="./css/animations.css" />
+  </head>
+  <body>
+    <a class="skip-link" href="#ranking">Saltar al ranking</a>
+
+    <header class="site-header">
+      <nav class="nav" aria-label="Principal">
+        <a class="nav__logo" href="#top">TOP<span class="nav__logo-accent">25</span>·80s</a>
+        <button
+          class="nav__toggle"
+          type="button"
+          aria-expanded="false"
+          aria-controls="nav-menu"
+          data-nav-toggle
+        >
+          <span class="nav__toggle-box" aria-hidden="true">
+            <span class="nav__toggle-bar"></span>
+            <span class="nav__toggle-bar"></span>
+            <span class="nav__toggle-bar"></span>
+          </span>
+          <span class="sr-only">Menú</span>
+        </button>
+        <ul class="nav__menu" id="nav-menu" data-nav-menu>
+          <li><a class="nav__link" href="#decada">La década</a></li>
+          <li><a class="nav__link" href="#podio">Podio</a></li>
+          <li><a class="nav__link" href="#ranking">Ranking</a></li>
+          <li><a class="nav__link" href="#menciones">Menciones</a></li>
+        </ul>
+      </nav>
+      <div class="tape-counter" aria-hidden="true">
+        <div class="tape-counter__fill" data-progress></div>
+      </div>
+    </header>
+
+    <main id="top">
+      <section class="hero" aria-labelledby="hero-title">
+        <div class="hero__grid" aria-hidden="true"></div>
+        <div class="hero__orb" aria-hidden="true"></div>
+        <div class="hero__inner">
+          <p class="hero__eyebrow">Música electrónica · 1979–1989</p>
+          <p class="hero__badge" aria-hidden="true">25</p>
+          <h1 class="hero__title" id="hero-title">
+            <span class="hero__line">LAS 25 CANCIONES</span>
+            <span class="hero__line hero__line--chrome">ELECTRÓNICAS</span>
+            <span class="hero__line">QUE DEFINIERON LOS 80</span>
+          </h1>
+          <p class="hero__lead">
+            De un bombo Roland en un sótano de Manchester a un 808 en el Bronx: los himnos de
+            sintetizador que convirtieron una década entera en pista de baile. Con sus videoclips,
+            uno a uno.
+          </p>
+          <div class="hero__actions">
+            <a class="btn btn--primary" href="#podio">Reproducir el ranking</a>
+            <a class="btn btn--ghost" href="#decada">La década</a>
+          </div>
+        </div>
+        <div class="ticker" data-ticker aria-hidden="true">
+          <div class="ticker__track" data-ticker-track></div>
+        </div>
+      </section>
+
+      <section class="decade panel-memphis" id="decada" aria-labelledby="decade-title">
+        <div class="section-inner">
+          <p class="eyebrow">01 — La década</p>
+          <h2 class="section-title" id="decade-title">El año en que el bombo dejó de ser humano</h2>
+          <div class="decade__grid">
+            <div class="decade__copy">
+              <p>
+                A principios de los 80 la caja de ritmos se instaló en el salón del pop. El Roland
+                TR-808 y el LinnDrum dejaron de imitar a los baterías para inventar un lenguaje
+                nuevo: seco, mecánico y adictivo. En Manchester, cuatro ex-punk de Factory
+                grabaron <em>Blue Monday</em> con un manual de instrucciones de programación en la
+                funda. En el Bronx, Afrika Bambaataa sampleó a Kraftwerk y le dio a la electrónica
+                una patada de baile.
+              </p>
+              <p>
+                MTV nació el 1 de agosto de 1981 emitiendo un videoclip profético de The Buggles.
+                A partir de ahí, el sintetizador no solo sonaba: se veía. Neón, chaquetas de cuero,
+                gafas de sol en interiores y cortes imposibles viajaron de Londres, Berlín y Milán a
+                cada rincón del planeta. Estas 25 canciones siguen sonando en cada pista que se
+                respete.
+              </p>
+            </div>
+            <ul class="decade__facts">
+              <li class="fact fact--cyan" data-reveal>
+                <p class="fact__date">01.08.1981</p>
+                <p class="fact__text">MTV abre sus puertas emitiendo <em>Video Killed the Radio Star</em>.</p>
+              </li>
+              <li class="fact fact--acid" data-reveal>
+                <p class="fact__date">1982</p>
+                <p class="fact__text"><em>Planet Rock</em> cruza el Atlántico: Kraftwerk + TR-808 = electro.</p>
+              </li>
+              <li class="fact fact--violet" data-reveal>
+                <p class="fact__date">1983</p>
+                <p class="fact__text"><em>Blue Monday</em> se convierte en el 12″ más vendido de la historia.</p>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <section class="podium" id="podio" aria-labelledby="podium-title">
+        <div class="section-inner">
+          <p class="eyebrow">02 — El podio</p>
+          <h2 class="section-title" id="podium-title">Los tres que empezaron todo</h2>
+          <p class="section-lead">
+            Los tres primeros puestos son leyenda: el disco más vendido en vinilo de 12″, el
+            himno synth que cruzó el Atlántico y la banda sonora de una generación.
+          </p>
+          <div class="podium__grid" data-podium></div>
+        </div>
+      </section>
+
+      <section class="ranking panel-memphis" id="ranking" aria-labelledby="ranking-title">
+        <div class="section-inner">
+          <p class="eyebrow">03 — El ranking</p>
+          <h2 class="section-title" id="ranking-title">Del 04 al 25</h2>
+          <p class="section-lead">
+            Filtra por género, reordena por año y pulsa cualquier miniatura para ver el
+            videoclip oficial.
+          </p>
+
+          <div class="controls">
+            <div class="filters" role="group" aria-label="Filtrar por género" data-filters></div>
+            <label class="sort">
+              <span class="sort__label">Ordenar</span>
+              <select class="sort__select" data-sort>
+                <option value="rank">Por puesto</option>
+                <option value="year-desc">Año · recientes</option>
+                <option value="year-asc">Año · antiguas</option>
+              </select>
+            </label>
+          </div>
+
+          <p class="ranking__status" data-status aria-live="polite"></p>
+          <div class="ranking__grid" data-grid></div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer panel-memphis" id="menciones">
+      <div class="section-inner">
+        <p class="eyebrow">04 — Menciones</p>
+        <h2 class="section-title footer__title">Casi entran en el 25</h2>
+        <ul class="mentions" data-mentions></ul>
+        <div class="footer__meta">
+          <p class="footer__brand">TOP<span>25</span>·80s</p>
+          <p class="footer__note">
+            Selección editorial de 25 canciones electrónicas (1979–1989). Los videoclips se
+            sirven desde YouTube; todos los derechos pertenecen a sus titulares. Hecho con HTML5,
+            CSS3 y JavaScript vanilla.
+          </p>
+        </div>
+      </div>
+    </footer>
+
+    <script type="module" src="./js/main.js"></script>
+  </body>
+</html>

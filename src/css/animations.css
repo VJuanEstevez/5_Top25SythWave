@@ -1,0 +1,80 @@
+@keyframes grid-scroll {
+  to {
+    background-position:
+      0 72px,
+      0 0;
+  }
+}
+
+@keyframes chrome-shift {
+  0% {
+    background-position: 50% 0%;
+  }
+  50% {
+    background-position: 50% 100%;
+  }
+  100% {
+    background-position: 50% 0%;
+  }
+}
+
+@keyframes orb-pulse {
+  from {
+    transform: scale(1) translate(0, 0);
+    opacity: 0.45;
+  }
+  to {
+    transform: scale(1.12) translate(-2%, 3%);
+    opacity: 0.65;
+  }
+}
+
+@keyframes ticker-scroll {
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+@keyframes rise-in {
+  from {
+    opacity: 0;
+    transform: translateY(28px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+[data-reveal] {
+  opacity: 0;
+}
+
+[data-reveal].is-visible {
+  animation: rise-in 0.7s var(--ease-out) both;
+  animation-delay: calc(var(--reveal-index, 0) * 90ms);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+
+  [data-reveal] {
+    opacity: 1;
+  }
+
+  .hero__grid,
+  .hero__orb,
+  .ticker__track {
+    animation: none;
+  }
+}
