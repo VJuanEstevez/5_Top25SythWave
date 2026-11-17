@@ -5,6 +5,58 @@
   padding-block: var(--space-9);
 }
 
+/* Full-height sections: each block occupies exactly the viewport height. */
+.hero,
+.decade,
+.podium,
+.footer {
+  height: 100vh;
+  overflow-x: hidden;
+  overflow-y: auto;
+  scrollbar-width: thin;
+  scrollbar-color: var(--ink-line) transparent;
+}
+
+/* Content stays centered while it fits; if it cannot fit (short viewports),
+   the auto margins collapse so the block remains scrollable and reachable.
+   The top offset keeps the first line clear of the fixed header. */
+.decade,
+.podium,
+.footer {
+  display: flex;
+  flex-direction: column;
+  padding-top: calc(var(--header-h) + var(--progress-h));
+}
+
+.decade > .section-inner,
+.podium > .section-inner,
+.footer > .section-inner {
+  flex: none;
+  width: 100%;
+  margin-block: auto;
+  padding-block: clamp(0.25rem, 1vh, var(--space-5)) clamp(0.75rem, 2vh, var(--space-9));
+}
+
+/* Height-aware scaling so the copy fits inside the fixed viewport block. */
+.decade .eyebrow,
+.podium .eyebrow,
+.footer .eyebrow {
+  margin-bottom: clamp(0.5rem, 1vh, var(--space-4));
+}
+
+.decade .section-title,
+.podium .section-title,
+.footer .section-title {
+  font-size: min(var(--text-2xl), 6vh);
+  margin-bottom: clamp(0.5rem, 1.5vh, var(--space-5));
+}
+
+.decade .section-lead,
+.podium .section-lead {
+  margin-bottom: clamp(0.5rem, 2vh, var(--space-7));
+  font-size: min(var(--text-lg), 3.4vh);
+}
+
 .eyebrow {
   margin-bottom: var(--space-4);
   font-family: var(--font-mono);
@@ -65,19 +117,26 @@
   position: relative;
   display: flex;
   flex-direction: column;
-  justify-content: flex-end;
-  min-height: 100svh;
-  padding-top: calc(var(--header-h) + var(--space-7));
+  padding-top: calc(var(--header-h) + var(--progress-h) + clamp(0.5rem, 1.5vh, var(--space-7)));
+}
+
+.hero__decor {
+  position: absolute;
+  inset: 0;
   overflow: hidden;
+  pointer-events: none;
 }
 
 .hero__inner {
   position: relative;
   z-index: 2;
+  flex: none;
   max-width: var(--content);
   width: 100%;
+  margin-block-start: auto;
   margin-inline: auto;
-  padding: var(--space-7) var(--space-5) var(--space-8);
+  padding: clamp(0.5rem, 2vh, var(--space-7)) var(--space-5)
+    clamp(0.5rem, 2.5vh, var(--space-8));
 }
 
 .hero__grid {
@@ -108,7 +167,7 @@
 }
 
 .hero__eyebrow {
-  margin-bottom: var(--space-4);
+  margin-bottom: clamp(0.5rem, 1.5vh, var(--space-4));
   font-family: var(--font-mono);
   font-size: var(--text-sm);
   font-weight: 700;
@@ -119,7 +178,7 @@
 
 .hero__badge {
   font-family: var(--font-display);
-  font-size: clamp(6rem, 4rem + 14vw, 13rem);
+  font-size: clamp(4rem, min(4rem + 14vw, 15vh), 13rem);
   line-height: 0.8;
   color: transparent;
   background: linear-gradient(165deg, var(--chrome) 12%, var(--cyan) 42%, var(--magenta) 68%, var(--violet));
@@ -133,8 +192,8 @@
   display: flex;
   flex-direction: column;
   gap: var(--space-2);
-  margin-block: var(--space-4) var(--space-6);
-  font-size: var(--text-2xl);
+  margin-block: clamp(0.5rem, 1.5vh, var(--space-4)) clamp(0.5rem, 2vh, var(--space-6));
+  font-size: min(var(--text-2xl), 6vh);
   letter-spacing: 0.01em;
 }
 
@@ -162,8 +221,8 @@
 
 .hero__lead {
   max-width: 46ch;
-  margin-bottom: var(--space-6);
-  font-size: var(--text-lg);
+  margin-bottom: clamp(0.5rem, 2vh, var(--space-6));
+  font-size: min(var(--text-lg), 3vh);
   color: var(--chrome-dim);
 }
 
@@ -171,6 +230,14 @@
   display: flex;
   flex-wrap: wrap;
   gap: var(--space-4);
+}
+
+.hero > .ticker {
+  flex: none;
+}
+
+.hero > .ticker .ticker__track {
+  padding-block: clamp(0.5rem, 1.5vh, var(--space-3));
 }
 
 .decade {
@@ -188,14 +255,15 @@
 .decade__grid {
   display: grid;
   grid-template-columns: 1.4fr 1fr;
-  gap: var(--space-7);
+  gap: clamp(0.75rem, 2vh, var(--space-7));
   align-items: start;
 }
 
 .decade__copy {
   display: grid;
-  gap: var(--space-4);
-  font-size: var(--text-lg);
+  gap: clamp(0.5rem, 1.5vh, var(--space-4));
+  font-size: min(var(--text-lg), 2.9vh);
+  line-height: 1.45;
   color: var(--ink);
 }
 
@@ -206,9 +274,14 @@
 
 .decade__facts {
   display: grid;
-  gap: var(--space-4);
+  gap: clamp(0.75rem, 2vh, var(--space-4));
   padding: 0;
   list-style: none;
+}
+
+.decade .fact {
+  gap: clamp(0.25rem, 1vh, var(--space-2));
+  padding: clamp(0.75rem, 2vh, var(--space-5));
 }
 
 .podium__grid {
@@ -223,6 +296,26 @@
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
+}
+
+/* The podium only needs to be squeezed while its three cards share one row. */
+@media (min-width: 61rem) {
+  .podium .card__media {
+    max-height: 17vh;
+  }
+}
+
+.podium .card__body {
+  padding: clamp(0.75rem, 2vh, var(--space-5));
+}
+
+.podium .card__title {
+  font-size: min(var(--text-lg), 3vh);
+}
+
+.podium .card__blurb {
+  font-size: var(--text-xs);
+  line-height: 1.35;
 }
 
 @supports (-webkit-text-stroke: 2px black) {
@@ -274,7 +367,7 @@
 }
 
 .footer .mentions {
-  margin-bottom: var(--space-8);
+  margin-bottom: clamp(1.5rem, 4vh, var(--space-8));
 }
 
 .footer__meta {
@@ -283,7 +376,7 @@
   align-items: end;
   justify-content: space-between;
   gap: var(--space-5);
-  padding-top: var(--space-6);
+  padding-top: clamp(1rem, 3vh, var(--space-6));
   border-top: 2px solid rgba(10, 6, 20, 0.25);
 }
 
@@ -344,6 +437,12 @@
 
   .section-inner {
     padding-block: var(--space-8);
+  }
+
+  /* The ranking keeps a natural height (no built-in header clearance),
+     so its top padding must clear the fixed header on anchor jumps. */
+  .ranking > .section-inner {
+    padding-block-start: calc(var(--header-h) + var(--progress-h));
   }
 
   .hero__orb {

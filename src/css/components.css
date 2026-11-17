@@ -87,7 +87,7 @@
 }
 
 .tape-counter {
-  height: 3px;
+  height: var(--progress-h);
   background: var(--ink-line);
 }
 
