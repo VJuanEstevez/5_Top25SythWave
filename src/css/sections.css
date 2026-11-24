@@ -87,7 +87,7 @@
 
 .panel-memphis::before,
 .panel-memphis::after {
-  content: '';
+  content: "";
   position: absolute;
   z-index: -1;
   pointer-events: none;
@@ -135,8 +135,7 @@
   width: 100%;
   margin-block-start: auto;
   margin-inline: auto;
-  padding: clamp(0.5rem, 2vh, var(--space-7)) var(--space-5)
-    clamp(0.5rem, 2.5vh, var(--space-8));
+  padding: clamp(0.5rem, 2vh, var(--space-7)) var(--space-5) clamp(0.5rem, 2.5vh, var(--space-8));
 }
 
 .hero__grid {
@@ -160,7 +159,12 @@
   width: clamp(14rem, 32vw, 26rem);
   aspect-ratio: 1;
   border-radius: 50%;
-  background: radial-gradient(circle at 35% 30%, var(--magenta), var(--violet) 55%, transparent 72%);
+  background: radial-gradient(
+    circle at 35% 30%,
+    var(--magenta),
+    var(--violet) 55%,
+    transparent 72%
+  );
   filter: blur(6px);
   opacity: 0.55;
   animation: orb-pulse 7s ease-in-out infinite alternate;
@@ -181,9 +185,15 @@
   font-size: clamp(4rem, min(4rem + 14vw, 15vh), 13rem);
   line-height: 0.8;
   color: transparent;
-  background: linear-gradient(165deg, var(--chrome) 12%, var(--cyan) 42%, var(--magenta) 68%, var(--violet));
+  background: linear-gradient(
+    165deg,
+    var(--chrome) 12%,
+    var(--cyan) 42%,
+    var(--magenta) 68%,
+    var(--violet)
+  );
   background-clip: text;
-  -webkit-background-clip: text;
+  background-clip: text;
   -webkit-text-stroke: 2px rgba(242, 244, 255, 0.35);
   user-select: none;
 }
@@ -205,7 +215,7 @@
   color: transparent;
   background: linear-gradient(
     180deg,
-    #ffffff 0%,
+    #fff 0%,
     #dfe4ff 16%,
     var(--violet) 36%,
     var(--magenta) 52%,
@@ -214,7 +224,7 @@
     #8d97c0 100%
   );
   background-clip: text;
-  -webkit-background-clip: text;
+  background-clip: text;
   animation: chrome-shift 6s linear infinite;
   background-size: 100% 220%;
 }
@@ -293,7 +303,7 @@
 .podium .card__rank {
   font-size: clamp(3.5rem, 2rem + 4vw, 5.5rem);
   background: linear-gradient(160deg, var(--card-accent, var(--cyan)), var(--chrome));
-  -webkit-background-clip: text;
+  background-clip: text;
   background-clip: text;
   color: transparent;
 }
@@ -322,30 +332,6 @@
   .podium .card__rank {
     -webkit-text-stroke: 0;
   }
-}
-
-.controls {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  justify-content: space-between;
-  gap: var(--space-4);
-  margin-bottom: var(--space-4);
-}
-
-.filters {
-  display: flex;
-  flex-wrap: wrap;
-  gap: var(--space-2);
-}
-
-.ranking__status {
-  margin-bottom: var(--space-5);
-  font-family: var(--font-mono);
-  font-size: var(--text-xs);
-  letter-spacing: 0.06em;
-  text-transform: uppercase;
-  color: var(--chrome-dim);
 }
 
 .ranking__grid {

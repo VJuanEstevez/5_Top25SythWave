@@ -10,6 +10,7 @@
 
 html {
   scroll-behavior: smooth;
+
   /* Full-height sections clear the fixed header with their own padding,
      so anchors must land flush with the top edge (no extra offset). */
   scroll-padding-top: 0;

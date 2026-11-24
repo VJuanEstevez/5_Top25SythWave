@@ -1,0 +1,155 @@
+{
+  "communities": {
+    "0": [
+      "src_modules_effects_reveal",
+      "src_modules_effects_reveal_initreveal",
+      "src_modules_main",
+      "src_modules_main_filtersel",
+      "src_modules_main_gridel",
+      "src_modules_main_mentionsel",
+      "src_modules_main_podiumel",
+      "src_modules_main_sortel",
+      "src_modules_main_statusel",
+      "src_modules_main_tickertrackel",
+      "src_modules_ui_nav",
+      "src_modules_ui_nav_initnav"
+    ],
+    "1": [
+      "package",
+      "package_author",
+      "package_description",
+      "package_keywords",
+      "package_license",
+      "package_main",
+      "package_name",
+      "package_version"
+    ],
+    "2": [
+      "src_modules_ui_render",
+      "src_modules_ui_render_accents",
+      "src_modules_ui_render_createcard",
+      "src_modules_ui_render_pad",
+      "src_modules_ui_render_rendergrid",
+      "src_modules_ui_render_rendermentions",
+      "src_modules_ui_render_renderpodium",
+      "src_modules_ui_render_renderticker"
+    ],
+    "3": [
+      "src_modules_data_songs",
+      "src_modules_data_songs_genre_labels",
+      "src_modules_data_songs_honorable_mentions",
+      "src_modules_data_songs_songs",
+      "src_modules_ui_filters",
+      "src_modules_ui_filters_initfilters",
+      "src_modules_ui_filters_sortsongs"
+    ],
+    "4": [
+      "package_scripts",
+      "package_scripts_build",
+      "package_scripts_deploy",
+      "package_scripts_dev",
+      "package_scripts_lint",
+      "package_scripts_lint_fix"
+    ],
+    "5": [
+      "package_devdependencies",
+      "package_devdependencies_gh_pages",
+      "package_devdependencies_prettier",
+      "ref_gh_pages",
+      "ref_prettier"
+    ],
+    "6": [
+      "src_modules_ui_video",
+      "src_modules_ui_video_initvideos",
+      "src_modules_ui_video_play",
+      "src_modules_ui_video_stop"
+    ],
+    "7": [
+      "package_devdependencies_vite",
+      "ref_vite",
+      "vite_config"
+    ],
+    "8": [
+      "package_devdependencies_oxfmt",
+      "ref_oxfmt"
+    ],
+    "9": [
+      "package_devdependencies_oxlint",
+      "ref_oxlint"
+    ],
+    "10": [
+      "package_devdependencies_stylelint_config_prettier_scss",
+      "ref_stylelint_config_prettier_scss"
+    ]
+  },
+  "cohesion": {
+    "0": 0.19696969696969696,
+    "1": 0.25,
+    "2": 0.39285714285714285,
+    "3": 0.38095238095238093,
+    "4": 0.3333333333333333,
+    "5": 0.4,
+    "6": 0.8333333333333334,
+    "7": 0.6666666666666666,
+    "8": 1.0,
+    "9": 1.0,
+    "10": 1.0
+  },
+  "gods": [
+    {
+      "id": "package_scripts",
+      "label": "scripts",
+      "degree": 6
+    },
+    {
+      "id": "src_modules_ui_render_createcard",
+      "label": "createCard()",
+      "degree": 4
+    },
+    {
+      "id": "ref_vite",
+      "label": "vite",
+      "degree": 3
+    },
+    {
+      "id": "src_modules_data_songs_genre_labels",
+      "label": "GENRE_LABELS",
+      "degree": 3
+    },
+    {
+      "id": "src_modules_ui_filters_initfilters",
+      "label": "initFilters()",
+      "degree": 3
+    },
+    {
+      "id": "src_modules_ui_render_pad",
+      "label": "pad()",
+      "degree": 3
+    },
+    {
+      "id": "src_modules_ui_render_renderpodium",
+      "label": "renderPodium()",
+      "degree": 3
+    },
+    {
+      "id": "src_modules_ui_render_rendergrid",
+      "label": "renderGrid()",
+      "degree": 3
+    },
+    {
+      "id": "src_modules_ui_render_renderticker",
+      "label": "renderTicker()",
+      "degree": 3
+    },
+    {
+      "id": "src_modules_ui_video_play",
+      "label": "play()",
+      "degree": 3
+    }
+  ],
+  "surprises": [],
+  "tokens": {
+    "input": 0,
+    "output": 0
+  }
+}

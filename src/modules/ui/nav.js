@@ -1,19 +1,19 @@
 export function initNav() {
-  const toggle = document.querySelector('[data-nav-toggle]');
-  const menu = document.querySelector('[data-nav-menu]');
-  const progress = document.querySelector('[data-progress]');
+  const toggle = document.querySelector("[data-nav-toggle]");
+  const menu = document.querySelector("[data-nav-menu]");
+  const progress = document.querySelector("[data-progress]");
 
   if (toggle && menu) {
-    toggle.addEventListener('click', () => {
-      const open = toggle.getAttribute('aria-expanded') === 'true';
-      toggle.setAttribute('aria-expanded', String(!open));
-      menu.classList.toggle('is-open', !open);
+    toggle.addEventListener("click", () => {
+      const open = toggle.getAttribute("aria-expanded") === "true";
+      toggle.setAttribute("aria-expanded", String(!open));
+      menu.classList.toggle("is-open", !open);
     });
 
-    menu.addEventListener('click', (event) => {
-      if (!event.target.closest('a')) return;
-      toggle.setAttribute('aria-expanded', 'false');
-      menu.classList.remove('is-open');
+    menu.addEventListener("click", (event) => {
+      if (!event.target.closest("a")) return;
+      toggle.setAttribute("aria-expanded", "false");
+      menu.classList.remove("is-open");
     });
   }
 
@@ -29,13 +29,13 @@ export function initNav() {
   };
 
   window.addEventListener(
-    'scroll',
+    "scroll",
     () => {
       if (ticking) return;
       ticking = true;
       window.requestAnimationFrame(updateProgress);
     },
-    { passive: true },
+    { passive: true }
   );
 
   updateProgress();
